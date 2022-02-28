@@ -70,7 +70,7 @@ function create(req, res) {
 }
 
 function read(req, res) {
-  res.status(201).json({ data: newDish });
+  res.json({ data: res.locals.dish });
 }
 
 function update(req, res, next) {
