@@ -63,7 +63,6 @@ function validate(req, res, next) {
   next();
 }
 
-
 function pending(req, res, next) {
   const status = res.locals.order.status;
 
@@ -75,7 +74,6 @@ function pending(req, res, next) {
   }
   next();
 }
-
 
 function create(req, res) {
   const { data: { deliverTo, mobileNumber, dishes } = {} } = req.body;
@@ -130,11 +128,10 @@ function update(req, res, next) {
 }
 
 function erase(req, res) {
-   const index = orders.indexOf(res.locals.order);
-   orders.splice(index, 1);
-   res.sendStatus(204);
-  }
-
+  const index = orders.indexOf(res.locals.order);
+  orders.splice(index, 1);
+  res.sendStatus(204);
+}
 
 function list(req, res) {
   res.json({ data: orders });
